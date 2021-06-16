@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电视剧详情页</title>
+</head>
+<body>
+<h1>{{ basic_info.name }}</h1>
+<table>
+    {% for basic_info in basic_info %}
+        <tr>{{ basic_info.name }}</tr>
+        <tr>{{ basic_info.director }}</tr>
+        <tr>{{ basic_info.actors }}</tr>
+        <tr>{{ basic_info.episodes }}</tr>
+        <tr>{{ basic_info.brief_intro }}</tr>
+        <tr>{{ basic_info.year }}</tr>
+    {% endfor %}
+</table>
+
+<form action="/cal/" method="post">
+    剧情<input type="number" name="plot"placeholder="打分值介于1到10之间" step="1" min="1" max="10">
+    演员表现力<input type="number" name="actor_expression" placeholder="打分值介于1到10之间" step="1" min="1" max="10">
+    导演能力<input type="number" name="direction" placeholder="打分值介于1到10之间" step="1" min="1" max="10">
+    编剧能力<input type="number" name="screenwriter" placeholder="打分值介于1到10之间" step="1" min="1" max="10">
+    摄影<input type="number" name="photography" placeholder="打分值介于1到10之间" step="1" min="1" max="10">
+    音乐<input type="number" name="music" placeholder="打分值介于1到10之间" step="1" min="1" max="10">
+    美术<input type="number" name="art" placeholder="打分值介于1到10之间" step="1" min="1" max="10">
+    特效<input type="number" name="effects" placeholder="打分值介于1到10之间" step="1" min="1" max="10">
+    简评<input type="text" name="overall" placeholder="用一些文字来简短的评价吧">
+    <input type="submit" value="提交你的评价">
+</form>
+
+
+
+</body>
+</html>
